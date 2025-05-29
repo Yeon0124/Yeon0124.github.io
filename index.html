@@ -1,23 +1,110 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yeon's homepage</title>
-<style>
-body { font-family: sans-serif; text-align: center; padding: 2rem; }
-nav a { margin: 0 1rem; }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yeon|Personal website</title>
+    <style>
+        body {
+            position: relative;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            position: relative;
+            background: black;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+
+        }
+
+        .menu {
+            background: black;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        .website-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            line-height: inherit;
+            margin-right: 1rem;
+        }
+
+        .page {
+            display: none;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .menu a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<h1>Yeon</h1>
-<ul class="nav">
-<li class="nav-item"><a class="nav-link" href="#home">홈</a></li>
-<li class="nav-item"><a class="nav-link" href="#project">프로젝트</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">연락처</a></li>
-</ul>
-<div id="app">
-<!-- SPA 콘텐츠 들어갈 곳 -->
-</div>
+    <div class="header">
+        <div class="menu">    
+            <a class="website-name" href>Yeon</a>
+            <a class="menu-link" href="#home">홈</a>
+            <a class="menu-link" href="#about">자기소개</a>
+            <a class="menu-link" href="#contact">연락처</a>
+        </div>
+    </div>
+    
+    <div id="home" class="page active">
+        <h1>홈</h1>
+        <p>여기는 홈 페이지입니다.</p>
+    </div>
+
+    <div id="about" class="page">
+        <h1>자기소개</h1>
+        <p>여기에 자기소개를 적으세요.</p>
+    </div>
+
+    <div id="contact" class="page">
+        <h1>연락처</h1>
+        <p>이메일: your@email.com</p>
+    </div>
+
+    <script>
+        function showPageByHash() {
+            const hash = location.hash.replace("#", "") || "home";
+            const pages = document.querySelectorAll(".page");
+
+            pages.forEach(page => {
+                page.classList.remove("active");
+                if (page.id === hash) {
+                    page.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("hashchange", showPageByHash);
+        window.addEventListener("DOMContentLoaded", showPageByHash);
+    </script>
 </body>
+
 </html>
