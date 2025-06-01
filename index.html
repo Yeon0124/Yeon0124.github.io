@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Yeon의 개인 웹사이트입니다. 프로젝트와 자기소개를 포함하고 있습니다." />
+    <meta name="keywords" content="Yeon, 개인 웹사이트, 프로젝트, 자기소개, 강원대학교, 컴퓨터공학과" />
+    <meta name="author" content="Yeon" />
+
     <title>Yeon | Personal website</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <style>
@@ -53,16 +57,23 @@
         }
 
         .nav-menu li {
-            margin: 0 15px;
             position: relative;
             display: inline-block;
+            padding: 15px 20px;
         }
 
         .nav-menu a {
             color: white;
             text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
+        .nav-menu li:hover {
+            background-color: #666;
+        }
+        
         .nav-menu a:hover {
             text-decoration: underline;
         }
@@ -86,16 +97,19 @@
 
         .content {
             max-width: 100%;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #f4f4f4;
         }
 
         .my-image {
-            width: 320px;
-            max-width: 100%;
+            width: 100%;
+            max-width: 320px;
             height: auto;
             display: inline-block;
             transition: width 1s ease;
+        }
+
+        .greeting-section {
+            white-space: nowrap;
         }
 
         #image-container {
@@ -106,10 +120,18 @@
         }
 
         #greeting {
+            white-space: normal;
             display: inline-block;
             vertical-align: top;
             max-width: calc(100% - 340px);
             /* 이미지 너비 + 마진 고려 */
+        }
+
+        #updated {
+            font-size: 10px;
+            color: #666;
+            text-align: right;
+            margin-top: 10px;
         }
 
         .page {
@@ -154,18 +176,28 @@
                 display: flex;
             }
 
-            .nav-menu li {
-                margin: 20px 0;
+            .menu-toggle {
                 display: block;
-                padding-top: 16px;
+                background: #333;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .nav-menu li {
+                display: block;
+                padding: 15px 10px;
                 border-top: 1px solid #ccc;
                 width: 100%;
             }
 
-            .nav-menu a {
+            .nav-menu li a {
+                display: block;
+                padding: 5px;
                 color: #f4f4f4;
-                padding: 10px;
                 width: 100%;
+                height: 100%;
             }
 
             .menu-toggle {
@@ -173,11 +205,16 @@
             }
 
             .my-image {
-                width: 90vw;
-                max-width: none;
+                width: 100%;
+                max-width: 90vw;
                 height: auto;
                 margin: 0 auto;
                 display: block;
+            }
+
+            .greeting-section {
+                display: block;
+                text-align: center;
             }
 
             #image-container {
@@ -199,16 +236,16 @@
 
     <nav class="nav-bar" role="navigation" aria-label="주 메뉴">
         <div class="title">
-            <a href="#" aria-label="Yeon 홈페이지 홈으로 이동">Yeon</a>
+            <a href="" aria-label="Yeon 홈페이지 홈으로 이동">Yeon</a>
         </div>
-        <div class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" role="button" tabindex="0"
+        <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" role="button" tabindex="0"
             aria-label="메뉴 토글">
             <span class="menu-icon">☰</span>
-        </div>
+        </button>
         <ul class="nav-menu" id="primary-navigation">
             <li><a class="menu-link" href="#home">Home</a></li>
+            <li><a class="menu-link" href="#project">Project</a></li>
             <li><a class="menu-link" href="#introduction">About me</a></li>
-            <li><a class="menu-link" href="#contact">연락처</a></li>
         </ul>
     </nav>
 
@@ -223,27 +260,69 @@
                     <div class="content" id="greeting">
                         <h1>인사말</h1>
                         <p>
-                            안녕하세요! 저는 강원대학교 컴퓨터공학과에 재학 중인 학생입니다. 이곳은 제 개인 웹사이트입니다. 이 사이트는 제 개인 프로젝트로, 제 기술과 경험을 공유하기 위해
-                            만들어졌습니다. 제 사이트를 방문해 주셔서 감사합니다!
+                            안녕하세요! 저는 강원대학교 컴퓨터공학과에 재학 중인 학생입니다. 컴퓨터를 좋아하고, 취업 전망이 좋아 보여 컴퓨터공학과에 진학했지만, 입학 시기가 코로나 시기와 겹치며 힘든 시간을 보내야 했고, 긴 시간 동안 방황했습니다. 아직 명확한 진로를 찾지는 못했지만 앞으로 제가 하고싶은 일을 찾기기까지 학업에 집중하며
+                            제가 하고싶은 일을 찾기 위해 노력 하며 겪는 경험들을 기록하고 공유하는 공간으로 이 사이트를 만들었습니다. 이 사이트는 제가 진행하는 프로젝트와 제 소개를 담고
+                            있습니다. 제 사이트를 통해 저의 여정을 함께 해주시면 감사하겠습니다.
                         </p>
+                        <p>제 사이트를 방문해 주셔서 감사합니다!</p>
+                        <p id="updated">Updated 1 Jun, 2025</p>
                     </div>
                 </div>
 
             </section>
         </div>
 
-        <div id="introduction" class="page">
-            <section class="introduction-section">
-                <h1>about</h1>
+
+
+        <div id="project" class="page">
+            <section class="project-section">
                 <div class="content">
-                </div>
+                    <h1>프로젝트</h1>
+
+                    <h2>진행중인 프로젝트</h2>
+                    <ul>
+                        <li>
+                            <h3><a href="https://github.com/Yeon0124/ksy/blob/ksy/teamproject.py">날씨 크롤링</a></h3>
+                            <p>이 프로젝트는 기상청 날씨 정보를 크롤링하여 제공하는 Python 스크립트입니다.</p>
+                        </li>
+                    </ul>
+
             </section>
         </div>
 
-        <div id="contact" class="page">
-            <section class="contact-section">
-                <h1>연락처</h1>
-                <p>여기는 연락처 페이지입니다.</p>
+        <div id="introduction" class="page">
+            <section class="introduction-section">
+                <div class="content">
+                    <h1>자기소개</h1>
+                    <p>
+                        학교 : 강원대학교<br />
+                        전공 : 컴퓨터공학과<br />
+                        관심 분야 : 웹 개발, 게임 개발, 그래픽 디자인<br />
+                        취미 : 게임, 음악 감상, 애니메이션 감상<br />
+                        MBTI : ISFP<br />
+                    </p>
+
+                    <h1>연락처</h1>
+                    <p>
+                    <h3>이메일</h3>
+                    <ul>
+                        <li><a class="mail" href="mailto:rlatods9@kangwon.ac.kr">rlatodus9@kangwon.ac.kr</a><br /></li>
+                        <li><a class="mail" href="mailto:rlatodus9@gmail.com">rlatodus9@gmail.com</a><br /></li>
+                    </ul>
+
+                    <h3>디스코드</h3>
+                    <ul>
+                        <li>
+                            <p>yeon_0124</p><br />
+                        </li>
+                    </ul>
+
+                    <h3>GitHub</h3>
+                    <ul>
+                        <li><a href="https://github.com/Yeon0124/Yeon0124.github.io">Yeon0124.github.io</a><br /></li>
+                    </ul>
+
+                </div>
             </section>
         </div>
     </div>
